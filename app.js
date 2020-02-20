@@ -3,6 +3,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookeParser from "cookie-parser";
 import bodyParser from "body-parser";
+import { userRouter } from './router';
 
 const app = express();
 const port = 4000;
@@ -16,12 +17,9 @@ app.use(bodyParser.urlencoded({ extended : true }));
 app.use(helmet());
 app.use(morgan("combined"));
 
-const middleware = (req, res, next) => {
-    res.send("not happening");
-}
-
-
 app.get("/",  handleHome);
 app.get('/profile', handleProfile);
+app.use('/user', userRouter);
+
 
 export default app;
