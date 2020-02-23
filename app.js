@@ -12,6 +12,9 @@ const app = express();
 const port = 4000;
 
 
+//pug라는 이름을 가진 view engine을 세팅한다. 
+app.set("view engine", "pug");
+
 //middleware
 //쿠키를 받아서 사용할 수 있도록 만들어주는 미들웨어 (사용자 인증 같은 곳에서 쿠키를 검사할 때 사용)
 app.use(cookeParser());
