@@ -1,4 +1,6 @@
 //- 인자가 들어오면 video에 값을 담는다 (default: 공백 )
 mixin videoBlock(video = {})
-    h1=video.title
-    p=video.description
+    .videoBlock
+        video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+        h4.videoBlock__title=video.title
+        h6.videoBlock__views=video.views
